@@ -1,0 +1,5 @@
+*.log
+MineTiers_MacroMonitor_*.log
+.tmp/
+Thumbs.db
+Desktop.ini
