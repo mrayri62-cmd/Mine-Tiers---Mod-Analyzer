@@ -22,6 +22,20 @@ Mine Tiers is a Windows PowerShell integrity tool for Minecraft clients. It comb
 Open PowerShell as Administrator, start Minecraft, then run:
 
 ```powershell
+$url = "https://raw.githubusercontent.com/mrayri62-cmd/Mine-Tiers---Mod-Analyzer/main/Mine-Tiers.ps1"; $file = Join-Path $env:TEMP "Mine-Tiers.ps1"; Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $file; powershell -NoProfile -ExecutionPolicy Bypass -File $file -Mode Full -ModsPath live
+```
+
+If you cloned or downloaded the repository, run:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File ".\Mine-Tiers.ps1" -Mode Full -ModsPath live
+```
+
+To clone the repository first:
+
+```powershell
+git clone https://github.com/mrayri62-cmd/Mine-Tiers---Mod-Analyzer.git
+cd Mine-Tiers---Mod-Analyzer
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\Mine-Tiers.ps1" -Mode Full -ModsPath live
 ```
 
