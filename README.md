@@ -8,7 +8,7 @@ Mine Tiers is a Windows PowerShell integrity tool for Minecraft clients. It comb
 - Scans Minecraft mod JARs for suspicious strings, mixins, bytecode hooks, network exfiltration markers, and heavy obfuscation.
 - Checks live JVM arguments for suspicious Java agents, Fabric/Forge runtime mod injection flags, debugger agents, and unsafe runtime options.
 - Checks for injector-style runtime indicators around the running Minecraft process.
-- Monitors common mouse software profiles for macro creation, modification, deletion, and onboard-memory evidence removal.
+- Monitors common mouse software profiles for macro creation, modification, deletion, and onboard-memory evidence removal. Press any key to stop the live macro monitor.
 
 ## Requirements
 
@@ -51,6 +51,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ".\Mine-Tiers.ps1" -Mode Sca
 # Start only the live macro monitor
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\Mine-Tiers.ps1" -Mode Monitor
 ```
+
+When the live macro monitor is running, press any key in the PowerShell window to close it cleanly.
 
 `-ModsPath live` tells Mine Tiers to scan the mods folder used by the Minecraft process that is currently open. You can also pass a specific folder:
 

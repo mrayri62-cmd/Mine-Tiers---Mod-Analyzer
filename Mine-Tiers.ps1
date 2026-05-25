@@ -2723,11 +2723,25 @@ function Start-MacroMonitor {
 
     if (-not $watcherCreated) { return }
 
-    Write-Host "  Mine Tiers monitor is live. Press Ctrl+C to stop." -ForegroundColor Magenta
+    try {
+        while ([Console]::KeyAvailable) {
+            [void][Console]::ReadKey($true)
+        }
+    } catch {}
+
+    Write-Host "  Mine Tiers monitor is live. Press any key to stop." -ForegroundColor Magenta
     Update-WindowTitle
 
     try {
         while ($true) {
+            try {
+                if ([Console]::KeyAvailable) {
+                    [void][Console]::ReadKey($true)
+                    Write-Host ""
+                    Write-Host "  Stop key received. Closing macro monitor..." -ForegroundColor DarkGray
+                    break
+                }
+            } catch {}
             [System.Threading.Thread]::Sleep(50)
         }
     } finally {
